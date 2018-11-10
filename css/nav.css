@@ -1,0 +1,20 @@
+/* # Setup devices width */
+/* # Variables for mobile first approach and strict ranges */
+.nav__item {
+  list-style-type: none;
+  display: block;
+  width: 90%;
+  margin: 10px auto; }
+
+.nav-item__title {
+  text-align: center;
+  color: #fff;
+  font-size: 20px;
+  line-height: 40px; }
+
+.nav-item__show {
+  width: 150px;
+  display: block;
+  margin: auto;
+  background-color: #FFF;
+  cursor: pointer; }

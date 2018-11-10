@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta   charset="UTF-8" />
+	<meta   name="viewport"
+        	content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+	<meta   http-equiv="X-UA-Compatible"content="ie=edge" />
+
+	<title>Constructor HTML</title>
+	
+	<link rel="stylesheet" href="css/main.css">
+	<link rel="stylesheet" href="css/nav.css">
+</head>
+<body id="body">
+	<header class="header">
+		<div class="header__nav-button" id="nav-button">
+			<div class="nav__burger">
+				<div class="nav__burger_line"></div>
+				<div class="nav__burger_line"></div>
+				<div class="nav__burger_line"></div>
+			</div>
+			Menu
+		</div>
+		<div class="header__logo">
+			Constructor HTML
+		</div>
+	</header>
+	<nav class="nav nav_disactive" id="nav">
+		<div class="nav_wrapper" id="navWrapper"></div>
+	</nav>
+	<div class="main">
+		<div class="wrapper">
+			<div class="screen">
+				<header class="screen__header">
+					<div class="screen__bar">
+						<span class="screen__bar-button screen__bar-button_yellow"></span>
+						<span class="screen__bar-button screen__bar-button_green"></span>
+						<span class="screen__bar-button screen__bar-button_red"></span>
+					</div>
+				</header>
+				<div class="screen__frame-wrapper" id="frameWrapper"></div>
+				<footer class="screen__footer"></footer>
+			</div>
+		</div>
+	</div>
+
+	<script src="js/main.js"></script>
+	<script src="js/navigation.js"></script>
+	<script src="js/DragnDrob/drag.js"></script>
+	<script>
+		DragManager.onDragCancel = function(dragObject) {
+      		dragObject.avatar.rollback();
+    	};
+
+    	DragManager.onDragEnd = function(dragObject, dropElem) {
+      		dropElem.innerHTML += navigation[dragObject.avatar.dataset.name].template;
+      		body.removeChild(dragObject.avatar);
+    	};
+	</script>
+</body>
+</html>
